@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的專屬典藏庫</title>
+    <title>金村美玖 部落格</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <h1>我的專屬典藏庫</h1>
-        <p>記錄所有珍貴的資料與連結</p>
+    <header class="main-header">
+        <h1>金村美玖 デビューから現在までの全ブログ</h1>
+        <p>みんなみくをお寿司かない！！🍣</p>
     </header>
 
-    <div class="filter-container">
-        <button class="filter-btn" onclick="filterCards('全部')">全部</button>
-        <button class="filter-btn" onclick="filterCards('影片')">文章</button>
-    </div>
+    <nav class="year-nav">
+        <button onclick="filterCards('2017')">2017</button>
+        <button onclick="filterCards('2018')">2018</button>
+        <button onclick="filterCards('2019')">2019</button>
+        <button onclick="filterCards('2020')">2020</button>
+        <button onclick="filterCards('2021')">2021</button>
+        <button onclick="filterCards('2022')">2022</button>
+        <button onclick="filterCards('2023')">2023</button>
+        <button onclick="filterCards('2024')">2024</button>
+        <button onclick="filterCards('2025')">2025</button>
+        <button onclick="filterCards('2026')">2026</button>
+    </nav>
 
-    <main id="gallery" class="grid-container">
-        </main>
+    <main id="gallery" class="list-container"></main>
+
+    <footer style="padding: 50px 10%; text-align: center; border-top: 1px solid #eee; margin-top: 50px;">
+        <p style="color: #bbb; font-size: 0.8rem;">© 2026 Kanemura Miku Archive</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

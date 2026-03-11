@@ -4968,16 +4968,10 @@ function renderCards(dataToRender) {
     gallery.innerHTML = ''; 
     dataToRender.forEach(item => {
         const cardHTML = `
-            <div class="card">
-                <img src="${item.image}" alt="${item.title}" class="card-image">
-                <div class="card-content">
-                    <span class="tag">${item.tag}</span>
-                    <h3>${item.title}</h3>
-                    <p class="date">${item.date}</p>
-                    <p>${item.description}</p>
-                    <a href="${item.link}" target="_blank" class="btn">前往文章</a>
-                </div>
-            </div>
+            <a href="${item.link}" target="_blank" class="card">
+                <span class="date">${item.date.split(' ')[0]}</span>
+                <span class="title">${item.title}</span>
+            </a>
         `;
         gallery.innerHTML += cardHTML;
     });
@@ -4985,11 +4979,11 @@ function renderCards(dataToRender) {
 
 renderCards(archiveData);
 
-function filterCards(selectedTag) {
-    if (selectedTag === '全部') {
+function filterCards(year) {
+    if (year === '全部') {
         renderCards(archiveData);
     } else {
-        const filteredData = archiveData.filter(item => item.tag === selectedTag);
+        const filteredData = archiveData.filter(item => item.date.startsWith(year));
         renderCards(filteredData);
     }
 }
